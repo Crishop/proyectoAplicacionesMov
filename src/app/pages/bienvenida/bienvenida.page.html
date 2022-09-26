@@ -1,9 +1,10 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>bienvenida</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header [isNotHome]="isNotHome" [pageTitle]="pageTitle"></app-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
+
+  <div id="container">
+    <strong>Bienvenido a la app de Aplicaciones móviles!</strong>
+    <p>Aquí debería ir el usuario : {{username}}</p>
+  </div>
 
 </ion-content>

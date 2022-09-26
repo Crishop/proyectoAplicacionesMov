@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BienvenidaPage implements OnInit {
 
+  pageTitle = 'home';
+  isNotHome = false;
+  username = 'Garupa';
+
   constructor() { }
 
   ngOnInit() {
