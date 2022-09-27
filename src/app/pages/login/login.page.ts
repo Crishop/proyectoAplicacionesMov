@@ -31,6 +31,7 @@ export class LoginPage implements OnInit {
 
   login(){
     if(this.validateModel(this.user)){
+      GlobaldataService.isLogged = true;
       GlobaldataService.userObject = this.user.email;
       this.presentToast('Bienvenido ' + this.user.email);
       this.router.navigate(['/bienvenida']);

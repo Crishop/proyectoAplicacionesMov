@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { GlobaldataService } from 'src/app/services/globaldata.service';
 
 @Component({
@@ -12,13 +13,19 @@ export class BienvenidaPage implements OnInit {
   isNotHome = false;
   username = 'Garupa';
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
-    if(GlobaldataService.userObject){
+      
+  }
+
+  ionViewWillEnter(){
+    if(GlobaldataService.isLogged){
       this.username = GlobaldataService.userObject;
     }
-    
+    else{
+      this.router.navigate(['/login']);
+    }  
   }
 
 }
