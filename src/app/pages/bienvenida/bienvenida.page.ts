@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobaldataService } from 'src/app/services/globaldata.service';
 
 @Component({
   selector: 'app-bienvenida',
@@ -14,6 +15,10 @@ export class BienvenidaPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    if(GlobaldataService.userObject){
+      this.username = GlobaldataService.userObject;
+    }
+    
   }
 
 }
