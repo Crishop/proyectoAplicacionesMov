@@ -1,26 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inicial',
   templateUrl: './inicial.page.html',
   styleUrls: ['./inicial.page.scss'],
 })
-
 export class InicialPage implements OnInit {
 
-  constructor(private loadingCtrl: LoadingController) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    setTimeout(() => {
+      this.router.navigate(['/login']);
+    }, 3000);
+ 
   }
-  async showLoading() {
-    const loading = await this.loadingCtrl.create({
-      message: 'Loading...',
-      duration: 3000,
-      spinner: 'circles',
-    });
 
-    loading.present();
-}
 
 }

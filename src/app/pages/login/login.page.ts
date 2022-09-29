@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToastController } from '@ionic/angular';
+import { LoadingController, ToastController } from '@ionic/angular';
 import { GlobaldataService } from 'src/app/services/globaldata.service';
 
 @Component({
@@ -13,7 +13,7 @@ import { GlobaldataService } from 'src/app/services/globaldata.service';
 
 export class LoginPage implements OnInit {
 
-  pageTitle = 'login';
+  pageTitle = 'Login';
   isNotHome = true;
 
   //Model
@@ -24,17 +24,23 @@ export class LoginPage implements OnInit {
   
   field: string = '';
 
-  constructor(private toastCtrl: ToastController, private router: Router) { }
+  constructor(private toastCtrl: ToastController, private router: Router, private loadingCtrl: LoadingController) { }
 
   ngOnInit() {
   }
 
   login(){
+
+
     if(this.validateModel(this.user)){
+      this.showLoading();
       GlobaldataService.isLogged = true;
       GlobaldataService.userObject = this.user.email;
       this.presentToast('Bienvenido ' + this.user.email);
-      this.router.navigate(['/bienvenida']);
+      setTimeout(() => {
+        this.router.navigate(['/bienvenida']);
+
+      }, 2000);
     }
     else{
       this.presentToast('Debes ingresar: ' + this.field);
@@ -58,6 +64,15 @@ export class LoginPage implements OnInit {
     });
     toast.present();
   }
+  async showLoading() {
+    const loading = await this.loadingCtrl.create({
 
+      message: 'Iniciando sesión..',
+      duration: 1500,
+      //spinner: 'lines',
+      
+    });
+    loading.present();
+}
 
 }
