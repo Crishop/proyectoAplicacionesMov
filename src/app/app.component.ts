@@ -8,9 +8,7 @@ export class AppComponent {
   public appPages = [
     { title: 'Bienvenida', url: 'bienvenida', icon: 'home' },
     { title: 'About', url: 'about', icon: 'people' },
-    { title: 'Login', url: 'login', icon: 'log-in' },
     { title: 'Conversor', url: 'conversor', icon: 'qr-code' },
-    { title: 'Inicial', url: 'inicial', icon: 'finger-print' }
   ];
   constructor() {}
 }
