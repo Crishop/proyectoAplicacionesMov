@@ -1,4 +1,7 @@
 <app-header [isNotHome]="isNotHome" [pageTitle]="pageTitle"></app-header>
+<ion-buttons *ngIf="isNotHome" slot="start">
+  <ion-back-button defaultHref="/" color="light"></ion-back-button>
+</ion-buttons>
 
 <ion-content [fullscreen]="true">
 

@@ -1,4 +1,7 @@
 <ion-header>
+  <ion-buttons *ngIf="isNotHome" slot="start">
+    <ion-back-button defaultHref="/" color="light"></ion-back-button>
+  </ion-buttons>
   <ion-toolbar>
     <ion-title>about</ion-title>
   </ion-toolbar>
