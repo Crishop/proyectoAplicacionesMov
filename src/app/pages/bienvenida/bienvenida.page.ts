@@ -9,7 +9,7 @@ import { GlobaldataService } from 'src/app/services/globaldata.service';
 })
 export class BienvenidaPage implements OnInit {
 
-  pageTitle = 'home';
+  pageTitle = 'Bienvenida';
   isNotHome = false;
   username = 'Garupa';
 

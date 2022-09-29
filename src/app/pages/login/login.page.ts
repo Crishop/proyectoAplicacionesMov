@@ -13,7 +13,7 @@ import { GlobaldataService } from 'src/app/services/globaldata.service';
 
 export class LoginPage implements OnInit {
 
-  pageTitle = 'login';
+  pageTitle = 'Login';
   isNotHome = true;
 
   //Model
