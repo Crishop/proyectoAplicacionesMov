@@ -11,7 +11,7 @@ export class BienvenidaPage implements OnInit {
 
   pageTitle = 'Bienvenida';
   isNotHome = false;
-  username = 'Garupa';
+  username = 'No se ha iniciado sesión';
 
   constructor(private router: Router) { }
 
