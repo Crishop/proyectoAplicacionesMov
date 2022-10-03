@@ -16,16 +16,16 @@ export class BienvenidaPage implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-      
-  }
-
-  ionViewWillEnter(){
     if(GlobaldataService.isLogged){
       this.username = GlobaldataService.userObject;
     }
     else{
       this.router.navigate(['/login']);
-    }  
+    } 
+  }
+
+  ionViewWillEnter(){
+     
   }
 
 }

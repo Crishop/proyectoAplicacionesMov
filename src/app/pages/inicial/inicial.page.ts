@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { GlobaldataService } from 'src/app/services/globaldata.service';
 
 @Component({
   selector: 'app-inicial',
@@ -11,9 +12,14 @@ export class InicialPage implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.router.navigate(['/login']);
-    }, 3000);
+    if(!GlobaldataService.isLogged){
+      setTimeout(() => {
+        this.router.navigate(['/login']);
+      }, 3000);
+    }
+    else{
+      this.router.navigate(['/bienvenida']);
+    }
  
   }
 
