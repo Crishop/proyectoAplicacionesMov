@@ -23,5 +23,16 @@ export class InicialPage implements OnInit {
  
   }
 
+  ionViewWillEnter(){
+    if(!GlobaldataService.isLogged){
+      setTimeout(() => {
+        this.router.navigate(['/login']);
+      }, 3000);
+    }
+    else{
+      this.router.navigate(['/bienvenida']);
+    }
+  }
+
 
 }
