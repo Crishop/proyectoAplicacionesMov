@@ -7,14 +7,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  
-  <ion-buttons >
-    <ion-button color="success" [routerLink]="['/login']">
-      <ion-icon name="log-in-outline"></ion-icon>
-    </ion-button>
-  </ion-buttons>
 
+<ion-content [fullscreen]="true">
+  <app-logout-button></app-logout-button>
+  
   <div id="container" class="ion-padding">
     <strong>Bienvenido a la app de Aplicaciones móviles!</strong>
     <p>Usuario : {{username}}</p>

@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { BienvenidaPageRoutingModule } from './bienvenida-routing.module';
 
 import { BienvenidaPage } from './bienvenida.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    BienvenidaPageRoutingModule
+    BienvenidaPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [BienvenidaPage]
 })

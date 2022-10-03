@@ -25,7 +25,12 @@ export class BienvenidaPage implements OnInit {
   }
 
   ionViewWillEnter(){
-     
+    if(GlobaldataService.isLogged){
+      this.username = GlobaldataService.userObject;
+    }
+    else{
+      this.router.navigate(['/login']);
+    }
   }
 
 }
