@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: 'conversor',
     loadChildren: () => import('./pages/conversor/conversor.module').then( m => m.ConversorPageModule)
+  },
+  {
+    path: '**',
+    loadChildren: () => import('./pages/error/error.module').then( m => m.ErrorPageModule)
   }
 ];
 
