@@ -1,9 +1,17 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header [translucent]="false">
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>404</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<p>Pagina no encontrado</p>
+<img src="assets/img/404.jpg" alt="">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button [routerLink]="['/conversor']">
+      <ion-icon name="qr-code"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
