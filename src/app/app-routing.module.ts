@@ -28,6 +28,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/conversor/conversor.module').then( m => m.ConversorPageModule)
   },
   {
+    path: 'monedas',
+    loadChildren: () => import('./pages/monedas/monedas.module').then( m => m.MonedasPageModule)
+  },
+  {
     path: '**',
     loadChildren: () => import('./pages/error/error.module').then( m => m.ErrorPageModule)
   }
