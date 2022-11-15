@@ -1,59 +1,43 @@
 <ion-header [translucent]="false">
   <ion-toolbar color="warning">
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button swipe-gesture="false"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Valor monedas</ion-title>
+    <ion-title>Convertidor</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card>
     <ion-card-header>
-      <ion-card-title>{{dolar.nombre}}</ion-card-title>
-      <ion-card-subtitle>Valor en CLP: ${{dolar.valor}}</ion-card-subtitle>
+      <ion-card-title>{{dolar.valor * moneda}}</ion-card-title>
+      <ion-card-subtittle>Convertidor Dolar a CLP</ion-card-subtittle>
+      <ion-input [(ngModel)]="moneda" placeholder="Ingrese dolares a convertir"></ion-input>
     </ion-card-header>
   </ion-card>
 
   <ion-card>
     <ion-card-header>
-      <ion-card-title>{{uf.nombre}}</ion-card-title>
-      <ion-card-subtitle>Valor en CLP: ${{uf.valor}}</ion-card-subtitle>
+      <ion-card-title>{{uf.valor * monedauf}}</ion-card-title>
+      <ion-card-subtittle>Convertidor UF a CLP</ion-card-subtittle>
+      <ion-input [(ngModel)]="monedauf" placeholder="Ingrese dolares a convertir"></ion-input>
     </ion-card-header>
   </ion-card>
 
   <ion-card>
     <ion-card-header>
-      <ion-card-title>{{ivp.nombre}}</ion-card-title>
-      <ion-card-subtitle>Valor en CLP: ${{ivp.valor}}</ion-card-subtitle>
+      <ion-card-title>{{euro.valor * monedaeuro}}</ion-card-title>
+      <ion-card-subtittle>Convertidor Euro a CLP</ion-card-subtittle>
+      <ion-input [(ngModel)]="monedaeuro" placeholder="Ingrese dolares a convertir"></ion-input>
     </ion-card-header>
   </ion-card>
 
   <ion-card>
     <ion-card-header>
-      <ion-card-title>{{dolar_intercambio.nombre}}</ion-card-title>
-      <ion-card-subtitle>Valor en CLP: ${{dolar_intercambio.valor}}</ion-card-subtitle>
+      <ion-card-title>{{utm.valor * monedautm}}</ion-card-title>
+      <ion-card-subtittle>Convertidor UTM a CLP</ion-card-subtittle>
+      <ion-input [(ngModel)]="monedautm" placeholder="Ingrese dolares a convertir"></ion-input>
     </ion-card-header>
   </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>{{euro.nombre}}</ion-card-title>
-      <ion-card-subtitle>Valor en CLP: ${{euro.valor}}</ion-card-subtitle>
-    </ion-card-header>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>{{utm.nombre}}</ion-card-title>
-      <ion-card-subtitle>Valor en CLP: ${{utm.valor}}</ion-card-subtitle>
-    </ion-card-header>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>{{bitcoin.nombre}}</ion-card-title>
-      <ion-card-subtitle>Valor en Dolar: ${{bitcoin.valor}}</ion-card-subtitle>
-    </ion-card-header>
-  </ion-card>
+  
 </ion-content>
