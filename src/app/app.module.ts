@@ -20,7 +20,8 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore'
             provideFirebaseApp(() => initializeApp(environment.firebase)), 
             provideAuth(() => getAuth()),
             provideFirestore(() => getFirestore()),
-            AuthGuardModule],
+            AuthGuardModule,
+            HttpClientModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

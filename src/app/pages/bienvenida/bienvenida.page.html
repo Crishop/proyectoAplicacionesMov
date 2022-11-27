@@ -11,8 +11,18 @@
 <ion-content [fullscreen]="true">
   
   <div id="container" class="ion-padding">
-    <strong>Bienvenido a la app de Aplicaciones móviles!</strong>
-    <p>El objetivo de la presente aplicación es servir como evaluación para la asignatura de Desarrollo de Aplicaciones Móviles</p>
+    <ion-card>
+      <img src="./../../../assets/img/welcome.jpg" />
+      <ng-container *ngIf="user$ | async as usuario">
+        <ion-card-header>
+          <ion-card-title>{{usuario.email}}</ion-card-title>
+          <ion-card-subtitle>Bienvenidoo</ion-card-subtitle>
+        </ion-card-header>
+      </ng-container>
+      <ion-card-content>
+        Nuestra aplicacion de QR
+      </ion-card-content>
+    </ion-card>
   </div>
 
 </ion-content>

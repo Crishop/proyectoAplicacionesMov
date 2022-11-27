@@ -1,0 +1,27 @@
+<ion-header [translucent]="false">
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Conversor de Monedas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{dolar.valor * moneda}}</ion-card-title>
+      <ion-card-subtitle>Convertidor Dolar a CLP</ion-card-subtitle>
+      <ion-input [(ngModel)]="moneda" placeholder="Ingrese dolares a convertir"></ion-input>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{euro.valor * monedaeuro}}</ion-card-title>
+      <ion-card-subtitle>Convertidor Euro a CLP</ion-card-subtitle>
+      <ion-input [(ngModel)]="monedaeuro" placeholder="Ingrese Euros a convertir"></ion-input>
+    </ion-card-header>
+  </ion-card>
+
+</ion-content>

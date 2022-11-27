@@ -46,6 +46,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/conversor/conversor.module').then( m => m.ConversorPageModule)
   },
   {
+    path: 'convertidor',
+    canActivate:[AuthGuard],
+    data:{authGuardPipe : redirectUnauthorizedToLogin},
+    loadChildren: () => import('./pages/convertidor/convertidor.module').then( m => m.ConvertidorPageModule)
+  },
+  {
     path: '**',
     loadChildren: () => import('./pages/error/error.module').then( m => m.ErrorPageModule)
   },
