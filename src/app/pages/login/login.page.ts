@@ -31,6 +31,7 @@ export class LoginPage implements OnInit {
           this.router.navigate(['/bienvenida'])
         }).catch(error => {
           console.error(error)
+          alert("No existe usuario")
         });
     }else{
       this.form.markAllAsTouched();

@@ -12,8 +12,8 @@ export class RegisterPage implements OnInit {
 
     form = this. formBuilder. group({
       email: ['', [Validators.email, Validators.required]],
-      password: ['', [Validators.required]],
-      confirmPassword: ['', [Validators.required]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      confirmPassword: ['', [Validators.required, Validators.minLength(6)]],
     });
     constructor(
       private formBuilder : FormBuilder,
@@ -31,6 +31,7 @@ export class RegisterPage implements OnInit {
         .then(() => {
           this.router.navigate(['/bienvenida'])
         }).catch(error => {
+          alert("Usuario ya registrado")
           console.error(error)
         });
       }else{
