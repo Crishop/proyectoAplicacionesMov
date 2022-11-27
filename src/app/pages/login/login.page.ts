@@ -1,78 +1,40 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoadingController, ToastController } from '@ionic/angular';
-import { GlobaldataService } from 'src/app/services/globaldata.service';
+import { AuthService } from './../../services/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-
-
-
 export class LoginPage implements OnInit {
 
-  pageTitle = 'Login';
-  isNotHome = true;
-
-  //Model
-  user : any = {
-    email: '',
-    password : ''
-  }
-  
-  field: string = '';
-
-  constructor(private toastCtrl: ToastController, private router: Router, private loadingCtrl: LoadingController) { }
+  form = this. formBuilder. group({
+    email: ['', [Validators.email, Validators.required]],
+    password: ['', [Validators.required]],
+  });
+  constructor(
+    private formBuilder : FormBuilder,
+    private auth: AuthService,
+    private router: Router,
+  ) { }
 
   ngOnInit() {
   }
-
+  //Validar formulario 
   login(){
-
-
-    if(this.validateModel(this.user)){
-      this.showLoading();
-      GlobaldataService.isLogged = true;
-      GlobaldataService.userObject = this.user.email;
-      this.presentToast('Bienvenido ' + this.user.email);
-      setTimeout(() => {
-        this.router.navigate(['/bienvenida']);
-
-      }, 2000);
-    }
-    else{
-      this.presentToast('Debes ingresar: ' + this.field);
+    if(this.form.valid){
+      const {email, password} =this.form.getRawValue();
+      this.auth.login(email,password)
+        .then(() => {
+          this.router.navigate(['/bienvenida'])
+        }).catch(error => {
+          console.error(error)
+        });
+    }else{
+      this.form.markAllAsTouched();
     }
   }
-
-  validateModel(model: any){
-    for(var[key,value] of Object.entries(model)){
-      if(value == ''){
-        this.field = key;
-        return false;
-      }
-    }
-    return true;
-  }
-
-  async presentToast(message: string, duration?: number){
-    const toast = await this.toastCtrl.create({
-      message:message,
-      duration:duration?duration:2000
-    });
-    toast.present();
-  }
-  async showLoading() {
-    const loading = await this.loadingCtrl.create({
-
-      message: 'Iniciando sesión..',
-      duration: 1500,
-      //spinner: 'lines',
-      
-    });
-    loading.present();
-}
 
 }

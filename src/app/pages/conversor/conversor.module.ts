@@ -7,7 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { ConversorPageRoutingModule } from './conversor-routing.module';
 
 import { ConversorPage } from './conversor.page';
-import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
@@ -15,7 +14,6 @@ import { ComponentsModule } from 'src/app/components/components.module';
     FormsModule,
     IonicModule,
     ConversorPageRoutingModule,
-    ComponentsModule
   ],
   declarations: [ConversorPage]
 })

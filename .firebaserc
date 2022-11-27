@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ionic-demo-be2c2": {
+      "hosting": {
+        "app": [
+          "ionic-demo-be2c2"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ionic-demo-be2c2"
+  }
+}

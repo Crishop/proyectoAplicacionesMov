@@ -1,34 +1,30 @@
-<ion-header [translucent]="false">
-    <ion-toolbar color="warning">
-      <ion-title class="ion-text-center">{{pageTitle}}</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title>Iniciar sesion</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-<ion-content>
-    <ion-card>
-        <ion-card-title class="ion-text-center" color="primary" >
-            <ion-label color="dark">
-                <h1>Bienvenido</h1>
-            </ion-label>
-        </ion-card-title>
-        <ion-card-content>
-            <ion-item>
-                <ion-label position="floating">Email</ion-label>
-                <ion-input  type="email"
-                            [(ngModel)]="user.email" 
-                            required 
-                            placeholder="correo@corre.com" 
-                            pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"></ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label position="floating">Password</ion-label>
-                <ion-input  type="password"
-                            [(ngModel)]="user.password"
-                            pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{4,8}$"
-                            required></ion-input>
-            </ion-item>
-        </ion-card-content>
-        <ion-button color="warning" shape="block" (click)="login()">Login</ion-button>
-    </ion-card>
-
+<ion-content class="ion-padding" >
+  <form (ngSubmit)="login()" [formGroup]="form" novalidate>
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Correo Electronico</ion-label>
+        <ion-input formControlName="email"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Contraseña</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-row>
+      <ion-col>
+        <ion-button color="warning" type="submit" expand="block">Ingresar</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="warning" routerLink="/register" type="button" expand="block">Registrarse</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
 </ion-content>

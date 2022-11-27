@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { GlobaldataService } from 'src/app/services/globaldata.service';
 
 @Component({
   selector: 'app-bienvenida',
@@ -8,29 +7,8 @@ import { GlobaldataService } from 'src/app/services/globaldata.service';
   styleUrls: ['./bienvenida.page.scss'],
 })
 export class BienvenidaPage implements OnInit {
-
-  pageTitle = 'Bienvenida';
-  isNotHome = false;
-  username = 'No se ha iniciado sesión';
-
   constructor(private router: Router) { }
 
-  ngOnInit() {
-    if(GlobaldataService.isLogged){
-      this.username = GlobaldataService.userObject;
-    }
-    else{
-      this.router.navigate(['/login']);
-    } 
-  }
-
-  ionViewWillEnter(){
-    if(GlobaldataService.isLogged){
-      this.username = GlobaldataService.userObject;
-    }
-    else{
-      this.router.navigate(['/login']);
-    }
-  }
+  ngOnInit() {}
 
 }
