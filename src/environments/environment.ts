@@ -3,6 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+
   firebase: {
     projectId: 'ionic-demo-be2c2',
     appId: '1:259375981651:web:0af2514e7a9d1bba4512a6',
@@ -12,7 +13,10 @@ export const environment = {
     authDomain: 'ionic-demo-be2c2.firebaseapp.com',
     messagingSenderId: '259375981651',
   },
-  production: false
+  production: false,
+
+  API_KEY:'e02730ee6535f0f9bbb6ea99d0f5401b',
+  API_URL:'https://api.openweathermap.org/data/2.5',
 };
 
 /*

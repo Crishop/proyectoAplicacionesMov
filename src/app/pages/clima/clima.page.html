@@ -1,0 +1,17 @@
+<ion-header [translucent]="false">
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Clima</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item>La temperatura es:  {{weatherTemp.temp | number:'1.0-0'}}°c</ion-item>
+    <ion-item>La humedad es de: {{weatherTemp.humidity}}%</ion-item>
+    <ion-item>La temperatura Maxima es: {{weatherTemp.temp_max | number:'1.0-0'}}°c </ion-item>
+    <ion-item>Ubicacion : {{ubicacion}} </ion-item>
+  </ion-card>
+</ion-content>

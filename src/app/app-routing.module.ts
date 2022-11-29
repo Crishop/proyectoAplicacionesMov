@@ -58,6 +58,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/crear-alumno/crear-alumno.module').then( m => m.CrearAlumnoPageModule)
   },
   {
+    path: 'clima',
+    canActivate:[AuthGuard],
+    data:{authGuardPipe : redirectUnauthorizedToLogin},
+    loadChildren: () => import('./pages/clima/clima.module').then( m => m.ClimaPageModule)
+  },
+  {
     path: '**',
     loadChildren: () => import('./pages/error/error.module').then( m => m.ErrorPageModule)
   },
