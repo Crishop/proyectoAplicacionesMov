@@ -10,7 +10,7 @@ import { AuthService } from './../../services/auth.service';
 })
 export class LoginPage implements OnInit {
 
-  form = this. formBuilder. group({
+  form = this.formBuilder.group({
     email: ['', [Validators.email, Validators.required]],
     password: ['', [Validators.required]],
   });

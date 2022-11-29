@@ -8,7 +8,7 @@ const redirectLoggedInToHome = () => redirectLoggedInTo(['/bienvenida']);
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'inicial',
     pathMatch: 'full'
   },
   {
@@ -50,6 +50,12 @@ const routes: Routes = [
     canActivate:[AuthGuard],
     data:{authGuardPipe : redirectUnauthorizedToLogin},
     loadChildren: () => import('./pages/convertidor/convertidor.module').then( m => m.ConvertidorPageModule)
+  },
+  {
+    path: 'crear-alumno',
+    canActivate:[AuthGuard],
+    data:{authGuardPipe : redirectUnauthorizedToLogin},
+    loadChildren: () => import('./pages/crear-alumno/crear-alumno.module').then( m => m.CrearAlumnoPageModule)
   },
   {
     path: '**',

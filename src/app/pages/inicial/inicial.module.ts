@@ -13,7 +13,8 @@ import { InicialPage } from './inicial.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    InicialPageRoutingModule
+    InicialPageRoutingModule,
+
   ],
   declarations: [InicialPage]
 })

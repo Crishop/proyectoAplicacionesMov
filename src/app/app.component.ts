@@ -13,7 +13,8 @@ export class AppComponent {
     { title: 'Bienvenida', url: 'bienvenida', icon: 'home' },
     { title: 'About', url: 'about', icon: 'people' },
     { title: 'Conversor', url: 'conversor', icon: 'qr-code' },
-    { title: 'Conversor Monedas', url: 'convertidor', icon:'construct'},
+    { title: 'Conversor Monedas', url: 'convertidor', icon:'cash'},
+    { title: 'Creacion de alumno', url: 'crear-alumno', icon:'add-circle'},
   ];
 
   user$ = this.auth.estadoUsuario$.pipe(
