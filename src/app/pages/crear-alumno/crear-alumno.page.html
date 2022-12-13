@@ -19,32 +19,32 @@
   </ion-fab>
   
 <form (ngSubmit)="onSubmit()" [formGroup]="formulario" novalidate>
-    <ion-list>
-      <ion-item>
-        <ion-label position="stacked">Nombre</ion-label>
-        <ion-input formControlName="nombre"></ion-input>
-      </ion-item>
-    </ion-list>
-    <ion-list>
-      <ion-item>
-        <ion-label position="stacked">Apellido</ion-label>
-        <ion-input formControlName="apellido"></ion-input>
-      </ion-item>
-    </ion-list>
-    <ion-list>
-      <ion-item>
-        <ion-label position="stacked">Edad</ion-label>
-        <ion-input type="number" formControlName="edad"></ion-input>
-      </ion-item>
-    </ion-list>
-    <ion-list>
-      <ion-item>
-        <ion-label position="stacked">Rut</ion-label>
-        <ion-input formControlName="rut"></ion-input>
-      </ion-item>
-    </ion-list>
-      <ion-img [src]="image" *ngFor="let image of images" width="200" ></ion-img>
-    <ion-button color="warning" type="submit" expand="block">Registrar Alumno</ion-button>
-  </form>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Nombre</ion-label>
+      <ion-input formControlName="nombre"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Apellido</ion-label>
+      <ion-input formControlName="apellido"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Edad</ion-label>
+      <ion-input type="number" formControlName="edad"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Rut</ion-label>
+      <ion-input formControlName="rut"></ion-input>
+    </ion-item>
+  </ion-list>
+    <ion-img [src]="image" *ngFor="let image of images" width="200" ></ion-img>
+  <ion-button color="warning" type="submit" expand="block">Registrar Alumno</ion-button>
+</form>
 
 </ion-content>

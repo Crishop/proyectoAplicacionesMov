@@ -12,8 +12,10 @@ export class ConversorPage implements OnDestroy {
 
   qrString = 'Prueba numero ';
   scannedResults : any;
+  content_visibility = ''
 
-  constructor(private router: Router) { }
+  constructor(
+    ) {}
 
   async checkPermission(){
     try{
@@ -36,13 +38,14 @@ export class ConversorPage implements OnDestroy {
       }
       await BarcodeScanner.hideBackground();
       document.querySelector('body').classList.add('scanner-active');
+      this.content_visibility='hidden';
       const result = await BarcodeScanner.startScan();
       console.log(result);
       if (result?.hasContent) {
         this.scannedResults = result.content;
         BarcodeScanner.showBackground();
         document.querySelector('body').classList.remove('scanner-active');
-        console.log(this.scannedResults);
+        this.content_visibility='';
       }
     } catch (error) {
       console.log(error)
@@ -54,6 +57,7 @@ export class ConversorPage implements OnDestroy {
     BarcodeScanner.showBackground();
     BarcodeScanner.stopScan();
     document.querySelector('body')!.classList.remove('scanner-active');
+    this.content_visibility='';
   }
 
 ngOnDestroy(): void {
