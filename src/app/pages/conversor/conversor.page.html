@@ -21,9 +21,31 @@
   <ion-button expand="block" class="ion-margin" (click)="escanear()" >Escanear QR</ion-button>
 
   <ion-item *ngIf="scannedResults">
-    <ion-label class="ion-text-wrap">
-      Resultados Scan : {{scannedResults}}
-    </ion-label>
-  </ion-item>
+    <form class="ion-padding" [formGroup]="asistencia" novalidate>
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">Correo Electronico</ion-label>
+          <ion-input formControlName="email"></ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">Nombre</ion-label>
+          <ion-input formControlName="nombre"></ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">Fecha</ion-label>
+          <ion-input type="date" formControlName="fecha"></ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-row>
+        <ion-col>
+          <ion-button color="warning" type="submit" expand="block">Registrar asistencia</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-item>  
 
 </ion-content>

@@ -1,4 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
 
@@ -10,11 +11,18 @@ import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
 })
 export class ConversorPage implements OnDestroy {
 
-  qrString = 'Prueba numero ';
+  qrString = 'Ingrese datos para registrar asistencia';
   scannedResults : any;
   content_visibility = ''
 
+  asistencia = this.formBuilder.group({
+    email: ['', [Validators.email, Validators.required]],
+    nombre: ['', [Validators.required]],
+    fecha: ['', [Validators.required]],
+  });
+
   constructor(
+    private formBuilder : FormBuilder
     ) {}
 
   async checkPermission(){
