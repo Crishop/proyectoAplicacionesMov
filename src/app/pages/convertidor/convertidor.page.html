@@ -10,17 +10,17 @@
 <ion-content>
   <ion-card>
     <ion-card-header>
-      <ion-card-title>{{dolar.valor * moneda}}</ion-card-title>
+      <ion-card-title>{{(dolar.valor * moneda).toFixed(2)}}</ion-card-title>
       <ion-card-subtitle>Convertidor Dolar a CLP</ion-card-subtitle>
-      <ion-input [(ngModel)]="moneda" placeholder="Ingrese dolares a convertir"></ion-input>
+      <ion-input [(ngModel)]="moneda" placeholder="Ingrese dolares a convertir" inputmode="numeric"></ion-input>
     </ion-card-header>
   </ion-card>
 
   <ion-card>
     <ion-card-header>
-      <ion-card-title>{{euro.valor * monedaeuro}}</ion-card-title>
+      <ion-card-title>{{(euro.valor * monedaeuro).toFixed(2)}}</ion-card-title>
       <ion-card-subtitle>Convertidor Euro a CLP</ion-card-subtitle>
-      <ion-input [(ngModel)]="monedaeuro" placeholder="Ingrese Euros a convertir"></ion-input>
+      <ion-input [(ngModel)]="monedaeuro" placeholder="Ingrese Euros a convertir" inputmode="numeric"></ion-input>
     </ion-card-header>
   </ion-card>
 

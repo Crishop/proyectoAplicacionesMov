@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ConversorPageRoutingModule } from './conversor-routing.module';
 
 import { ConversorPage } from './conversor.page';
+import { QRCodeModule } from 'angularx-qrcode';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { ConversorPage } from './conversor.page';
     FormsModule,
     IonicModule,
     ConversorPageRoutingModule,
+    QRCodeModule
   ],
   declarations: [ConversorPage]
 })

@@ -15,7 +15,7 @@ export class AppComponent {
     { title: 'Conversor', url: 'conversor', icon: 'qr-code' },
     { title: 'Conversor Monedas', url: 'convertidor', icon:'cash'},
     { title: 'Creacion de alumno', url: 'crear-alumno', icon:'add-circle'},
-    { title: 'Clima', url: 'clima', icon:'add-circle'},
+    { title: 'Clima', url: 'clima', icon:'cloudy-night'},
   ];
 
   user$ = this.auth.estadoUsuario$.pipe(

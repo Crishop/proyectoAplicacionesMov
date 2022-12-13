@@ -8,5 +8,46 @@
 </ion-header>
 
 <ion-content>
-  
+
+  <ion-card class="ion-text-center">
+    <ion-card-content>
+      <qrcode [qrdata]="qrString" 
+      [width]="256" 
+      [errorCorrectionLevel]="'M'">
+      </qrcode>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="block" class="ion-margin" (click)="escanear()" >Escanear QR</ion-button>
+
+  <ion-item *ngIf="scannedResults">
+    <form >
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">Nombre</ion-label>
+          <ion-input formControlName="nombre"></ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">Apellido</ion-label>
+          <ion-input formControlName="apellido"></ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">Edad</ion-label>
+          <ion-input type="number" formControlName="edad"></ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">Rut</ion-label>
+          <ion-input formControlName="rut"></ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-button color="warning" type="submit" expand="block">Registrar asistencia</ion-button>
+    </form>
+  </ion-item>
+
 </ion-content>
