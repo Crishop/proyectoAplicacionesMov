@@ -9,7 +9,7 @@ export class AuthService {
   estadoUsuario$ = authState(this.afAuth);
 
   constructor(
-    private afAuth : Auth
+    private afAuth : Auth,
   ) { }
 
   async register(email: string, password:string){
@@ -24,4 +24,9 @@ export class AuthService {
   logout(){
     return signOut(this.afAuth);
   }
+
+  email(){
+    return this.afAuth.currentUser.email
+  }
+
 }

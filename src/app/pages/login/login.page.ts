@@ -30,8 +30,12 @@ export class LoginPage implements OnInit {
         .then(() => {
           this.router.navigate(['/bienvenida'])
         }).catch(error => {
-          console.error(error)
-          alert("No existe usuario")
+          if (error.code === 'auth/user-not-found') {
+            alert("Usuario no existe")
+          }
+          if (error.code === 'auth/wrong-password') {
+            alert('Clave incorrecta')
+          }
         });
     }else{
       this.form.markAllAsTouched();

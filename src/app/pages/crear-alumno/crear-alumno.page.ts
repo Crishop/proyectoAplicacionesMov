@@ -71,6 +71,5 @@ export class CrearAlumnoPage implements OnInit {
       }
     })
     .catch(error => console.log(error))
-  }
-  
+  } 
 }

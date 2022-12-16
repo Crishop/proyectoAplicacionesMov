@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { AuthService} from './../../services/auth.service'
 import { filter } from 'rxjs/operators';
 
@@ -11,7 +10,6 @@ import { filter } from 'rxjs/operators';
 })
 export class BienvenidaPage implements OnInit {
   constructor(
-    private router: Router,
     private auth: AuthService
     ) { }
 
